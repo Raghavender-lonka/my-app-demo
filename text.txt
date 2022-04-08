@@ -1,0 +1,40 @@
+React Only Updates What’s Necessary:-
+
+1)React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.
+
+Components and Props:-
+
+    Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. 
+
+    components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
+
+Props are Read-Only
+
+    Whether you declare a component as a function or a class, it must never modify its own props.Consider this sum function:
+
+    function sum(a, b) {
+    return a + b;
+    }
+
+    Such functions are called “pure” because they do not attempt to change their inputs, and always return the same result for the same inputs.
+
+    In contrast, this function is impure because it changes its own input:
+
+    function withdraw(account, amount) {
+    account.total -= amount;
+    } 
+
+All React components must act like pure functions with respect to their props.
+
+Converting a Function to a Class
+You can convert a function component like Clock to a class in five steps:
+
+   1. Create an ES6 class, with the same    name, that extends React.Component.
+   2. Add a single empty method to it called render().
+   3. Move the body of the function into the render() method.
+   4. Replace props with this.props in the render() body.
+   5. Delete the remaining empty function declaration.
+
+“lifecycle methods”.
+
+    The componentDidMount() method runs after the component output has been rendered to the DOM. 
