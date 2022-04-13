@@ -1,19 +1,35 @@
 import React from "react"
 import { Routes } from "react-router-dom"
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
+import { BrowserRouter, Route, NavLink } from "react-router-dom"
 import Contact from "./Route/Contact"
 import Home from "./Route/Home"
 
 function App() {
+  function navStyle({ isActive }) {
+    return getStyles(isActive)
+  }
+
+  const getStyles = (isActive) => {
+    if (isActive) {
+      return { backgroundColor: "red" }
+    } else {
+      return {}
+    }
+  }
+
   return (
     <BrowserRouter>
       <div>
-        <Link to="/home">Home</Link>
+        <NavLink to="/home" style={navStyle}>
+          Home
+        </NavLink>
         <br />
-        <Link to="/contact">Contact</Link>
+        <NavLink to="/contact" style={navStyle}>
+          Contact
+        </NavLink>
         <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
+          {/* <Route path="/home" element={<Home />} /> */}
+          <Route path="/contact/:name" element={<Contact />} />
         </Routes>
         {/* see navigate and exact path */}
       </div>
