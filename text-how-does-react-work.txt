@@ -45,3 +45,11 @@ The Component Lifecycle (Class-based Components)
     - componentWillUnmount() is called before the component is unmounted and destroyed.and here the equivalent is basically the clean up function from useEFFECT that cleanup function is called right before the EFFECT function is executed again and also always again, when the component is about to be removed from the DOM.
 
 In JavaScript, super refers to the parent class constructor.
+
+useEFFECT:- without dependencies useEFFECT will trigger the effect function whenever the component is re-evaluated and re-rendered. and any state changes.
+
+useEFFECT is a combination of three Lifecycle methods:
+    componentDidMount()
+    componentDidUpdate()
+    componentWillUnmount()
+    
