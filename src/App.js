@@ -1,10 +1,14 @@
-import React from "react"
-import UseEffectHook from "./components/useEffect/UseEffectHook"
+import React, { createContext } from "react"
+import Child1 from "./components/context/Child1"
+
+export const Info = createContext()
 
 function App() {
   return (
     <div>
-      <UseEffectHook />
+      <Info.Provider value={"Library"}>
+        <Child1 name={"React"} />
+      </Info.Provider>
     </div>
   )
 }

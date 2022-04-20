@@ -10,7 +10,7 @@ How does react work?
     also note: react rerenders only when props or state(useState) changes.
 
 React.memo:
-    So React.memo allows us to optimize functional components.Now, what does memo do?
+    React.memo allows us to optimize functional components.Now, what does memo do?
     It tells React that for this component,
     which it gets as a argument,
     React should look at the props this component gets and check the new value for all those props and compare it to the previous value those props got.
@@ -53,3 +53,12 @@ useEFFECT is a combination of three Lifecycle methods:
     componentDidUpdate()
     componentWillUnmount()
     
+
+git status = to check the status of git in local folder
+git init = initialize git repository 
+git add . = add the changes
+git commit -m “first commit” = commit the changes
+git remote add origin <url> = connect local to git repo
+git push -u origin master = push the changes to master branch
+git config --global user.name “username”
+git config --global user.email “email”

@@ -14,14 +14,15 @@ function UseEffectHook() {
   //     console.log("here3")
   //   }, [counter2])
 
-  const incrementHandler = () => {
-    return setCounter(counter + 1)
-  }
+  // const incrementHandler = () => {
+  //   return setCounter(counter + 1)
+  // }
+
   return (
     <div>
       <h1>Counter : {counter}</h1>
 
-      <button onClick={incrementHandler}>++</button>
+      <button onClick={() => setCounter(counter + 1)}>++</button>
       <h1>Counter : {counter2}</h1>
 
       <button onClick={() => setCounter2(counter2 - 1)}>--</button>
