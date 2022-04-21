@@ -246,3 +246,21 @@ When a component’s props or state change, React decides whether an actual DOM 
 Prop drilling refers to the process of sending props from a higher-level component to a lower-level component.
 
 Prop drilling is basically a situation when the same data is being sent at almost every level due to requirements in the final level.
+
+# shallowCompare
+
+shallowCompare performs a shallow equality check on the current props and nextProps objects as well as the current state and nextState objects.
+
+It does this by iterating on the keys of the objects being compared and returning true when the values of a key in each object are not strictly equal.
+
+shallowCompare returns true if the shallow comparison for props or state fails and therefore the component should update.
+
+shallowCompare returns false if the shallow comparison for props and state both pass and therefore the component does not need to update.
+
+# Pure Component
+
+React.PureComponent implements it with a shallow prop and state comparison.
+
+If your React component’s render() function renders the same result given the same props and state, then PureComponent does not re-render, PureComponent only re-renders if props or state changes
+
+you can use React.PureComponent for a performance boost in some cases.
