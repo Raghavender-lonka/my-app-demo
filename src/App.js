@@ -1,31 +1,30 @@
-import React, { PureComponent } from "react"
-import HighOrder from "./components/HigherOrder/HigherOrder"
-import PureClass from "./components/PureComponent/PureComponentClass"
-import RegularComp from "./components/PureComponent/Regular"
+import React, { useCallback, useEffect, useState } from "react"
+import MemoReact from "./components/ReactMemo/ReactMemo"
 
-class App extends PureComponent {
-  constructor(props) {
-    super(props)
-    this.state = {
-      message: "hi",
-    }
-  }
+function App() {
+  // console.log("App")
+  const [num, setNum] = useState(Math.random())
+  const [counter, setCounter] = useState(0)
 
-  // componentDidMount() {
+  const handleChange = useCallback(() => {
+    setCounter(counter + 1)
+  }, [counter])
+
+  useEffect(() => {
+    console.log("Message App")
+  }, [counter])
+
+  // useEffect(() => {
   //   setInterval(() => {
-  //     this.setState({ message: "hi" })
-  //   }, 1000)
-  // }
-
-  render() {
-    // console.log("App")
-    return (
-      <div>
-        <PureClass msg={this.state.message} />
-        <RegularComp msg={this.state.message} />
-      </div>
-    )
-  }
+  //     setNum(Math.random().toFixed(2))
+  //   }, 2000)
+  // }, [])
+  return (
+    <div>
+      <h1>Num: {num} </h1>
+      <MemoReact counter={counter} handleChange={handleChange} />
+    </div>
+  )
 }
 
 export default App
