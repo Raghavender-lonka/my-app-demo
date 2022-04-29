@@ -1,10 +1,13 @@
 import React from "react"
-import AxiosComp from "./components/axios/axiosComp"
+import CounterReducer from "./components/Redux/CounterRedux"
 
 function App() {
   return (
     <div>
-      <AxiosComp />
+      <marquee>
+        <h3>29-04-22</h3>
+      </marquee>
+      <CounterReducer />
     </div>
   )
 }
