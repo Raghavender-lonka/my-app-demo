@@ -1,0 +1,16 @@
+.container {
+  background-color: red;
+}
+
+.container h1 {
+  color: #31af4c;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+.container p {
+  color: black;
+  font-size: 20px;
+  font-style: italic;
+}
+/*# sourceMappingURL=styles.css.map */

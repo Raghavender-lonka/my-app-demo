@@ -1,0 +1,18 @@
+@import constants
+
+@mixin child($Radius: 5px)
+    border-radius: $Radius
+
+
+.container
+    background-color: $myBac
+    h1
+        color: $myColor
+        border: 1px solid white
+        @include child($Radius: 20px)
+    p
+        color: black
+        font-size: 20px
+        font-style: italic
+        
+        

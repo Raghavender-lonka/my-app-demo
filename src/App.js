@@ -1,13 +1,13 @@
 import React from "react"
-import CounterReducer from "./components/Redux/CounterRedux"
+import SassComp from "./components/sass/SassComp"
 
 function App() {
   return (
     <div>
       <marquee>
-        <h3>29-04-22</h3>
+        <h3>02-05-22</h3>
       </marquee>
-      <CounterReducer />
+      <SassComp />
     </div>
   )
 }
